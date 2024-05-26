@@ -1,0 +1,76 @@
+<section class="aboutDoctors my-5">
+  <div class="main-title mx-auto  ">
+    <h1 >About Doctors</h1>
+  </div>
+  <div class="container w-75 mx-auto shadow my-5 rounded-5" *ngIf="aboutDoctors;else doctorsAboutEmpty">
+    <div class="row align-items-center">
+      <div class="col-md-5">
+        <div class="customDiv overflow-hidden rounded-5 my-3 px-2">
+          <div class="img">
+            <img
+            [src]="
+              'https://localhost:7198/images/'+aboutDoctors.photoPath
+            "
+            class="w-100" height="300"
+            [alt]="aboutDoctors.fullName"
+          />
+          <div class="overlay">
+            <span (click)="edit(id)" ><i class="fa-solid fa-pen-to-square"></i> </span>
+            <span (click)="confirmDelete()"><i class="fa-solid fa-trash-can-arrow-up"></i></span>
+
+        </div>
+
+          </div>
+        
+        </div>
+      </div>
+      <div class="col-md-7">
+        <div class="leftContent  my-3">
+          <div class="leftHeader">
+            <div class="div">
+              <h1 > {{ aboutDoctors.fullName }}</h1>
+              <h3>{{ aboutDoctors.specialize }}</h3>
+            </div>
+          
+            <span class="shadow">
+              <p class="m-0 p-0 ">{{aboutDoctors.gender}}</p>
+             <p class="m-0 p-0">{{DOBirth|date}}</p>
+            </span>
+
+          </div>
+       
+          
+          <div class="icons">
+            <div class="icon">
+              <i class="fa-regular fa-envelope"></i>
+            </div>
+
+            <a href="mailTo:" 
+              ><p>{{ aboutDoctors.email }}</p></a
+            >
+          </div>
+          <div class="icons">
+            <div class="icon">
+              <i class="fa-solid fa-phone"></i>
+            </div>
+            <a href="tel:" ><p>{{ aboutDoctors.phone }}</p></a>
+
+       
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<ng-template #doctorsAboutEmpty>
+  <div class="notFound py-5  h-100 d-flex justify-content-center align-items-center ">
+      <div class="container my-3 py-5 shadow text-center w-50 mx-auto rounded-5 overflow-hidden  ">
+          <h1 class="text-center text-capitalize fw-bold">There is no doctor Found </h1>
+          
+
+      </div>
+
+  </div>
+  
+
+</ng-template>

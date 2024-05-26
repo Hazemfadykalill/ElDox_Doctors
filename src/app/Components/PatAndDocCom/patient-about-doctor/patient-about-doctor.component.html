@@ -1,0 +1,97 @@
+<section class="mainSection my-5  mx-auto   ">
+    <!-- Header -->
+    <div class="m mb-2  d-flex justify-content-center">
+        <div class="main-title my-4 ">
+            <h1>Welcome {{aboutDoctor?.fullName}}</h1>
+        </div>
+    </div>
+    <div class="bodeDetails my-5 ">
+        <div
+            class="first  w-50 mx-auto d-flex gap-5 align-items-center justify-content-center my-3 w-75 shadow rounded-4 p-2 mx-auto">
+            <div class="image text-center  p-2">
+
+                <img [src]="'https://localhost:7198/images/'+aboutDoctor?.photoPath" height="270" width="270" class="rounded-circle shadow"
+                    alt="">
+            </div>
+            <div class="content ">
+                <h1 class="text-capitalize">{{aboutDoctor?.fullName}}</h1>
+                <p> <strong>{{aboutDoctor?.specialize}}</strong></p>
+               
+                <ul>
+                    <li><i class="fa-regular fa-envelope"></i><span> <strong>{{aboutDoctor?.email}}</strong></span></li>
+                    <li><i class="fa-solid fa-phone-volume"></i><span> <strong>{{aboutDoctor?.phone}}</strong></span>
+                    </li>
+                </ul>
+                <span class="bg-danger rounded-3 p-3 text-white"><strong>price : {{aboutDoctor?.price|currency:'EUG '}}</strong></span>
+
+
+            </div>
+
+        </div>
+
+        <div class="footerContent    px-5 ">
+            <div class=" my-4 text-center ">
+                <h1>Appointments Doctors</h1>
+            </div>
+
+
+            <div class="allDayes  shadow my-4 rounded-4  d-flex gap-3 px-5   ">
+                <div class="oneDay  w-25 rounded-4 shadow   my-4 " *ngFor="let day of aboutDoctor?.appointments;index as index">
+                    <div [class]="index%2==0?'red':'blue'"  class="he  text-center p-3 rounded-top-3">
+                        <p  class=""><strong>{{day.day}}</strong></p>
+
+
+
+                    </div>
+                    <div class="  d-flex gap-3  p-3">
+                        <select #time (change)="changeId($event)" class="form-select"
+                            aria-label="Default select example">
+                            <option disabled> select Time</option>
+
+                            <option #opt *ngFor="let item of day.times " [value]="[item.id,item.time]">{{item.time}}</option>
+
+                        </select>
+                        <select (change)="changeCode($event)" class="form-select" aria-label="Default select example">
+                            <option disabled> select AppointmentsCode</option>
+
+                            <option *ngFor="let code of couponsList " [value]="code.discountCode">{{code.discountCode}}</option>
+
+                        </select>
+                        <!-- 
+                        <p-dropdown [options]="aboutDoctor?.appointments!|mapTime:day.day"
+                            placeholder="Select Time To Book" [virtualScroll]="true"
+                            [virtualScrollItemSize]="day.times.length">
+                        </p-dropdown>
+                        <p-dropdown [options]="aboutDoctor?.appointments!|mapTime:day.day"
+                            placeholder="Select Time To Book" [virtualScroll]="true"
+                            [virtualScrollItemSize]="day.times.length">
+                        </p-dropdown> -->
+                    </div>
+                    <!--                   
+
+                    <div class="spans d-flex flex-column my-3 mx-2">
+                        <span   class="rounded-3 my-2" *ngFor="let time of day.times">
+                            {{time.time}}
+                        </span>
+
+                    </div> -->
+
+                    <div class="btnBook text-center  my-2" >
+                        <button [class]="index%2==0?'blue':'red'" (click)="bookNow()">Book Now</button>
+                    </div>
+                </div>
+               
+
+
+            </div>
+
+
+
+
+        </div>
+      
+
+    </div>
+
+
+</section>

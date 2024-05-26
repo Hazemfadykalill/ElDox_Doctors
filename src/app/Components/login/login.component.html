@@ -1,0 +1,29 @@
+<div class="form-container shadow mt-5  ">
+    <form [formGroup]="loginAdminForm" (ngSubmit)="handleForm()" class="form">
+      <p class="title">Welcome To Login</p>
+      
+  
+      <div class="form-group mx-auto">
+        <input #email formControlName="email" class="form-input" required="" type="email" />
+        <label>Email</label>
+        <!-- Email Error -->
+      </div>
+      <div *ngIf="(loginAdminForm.get('email')?.errors)&&(email.value.length>0||loginAdminForm.get('email')?.touched)" class="error ">
+        <p *ngIf="loginAdminForm.get('email')?.getError('required')">Email Required</p>
+        <p *ngIf="loginAdminForm.get('email')?.getError('email')">Email Must be example123@gmail|Yahoo.com</p>
+    </div>
+  
+      <div  class="form-group">
+        <input #password formControlName="password" class="form-input" required="" type="password" />
+        <label>Password</label>
+        <!-- password Error -->
+       
+      </div>
+      <div *ngIf="(loginAdminForm.get('password')?.errors)&&(password.value.length>0||loginAdminForm.get('password')?.touched)" class="error">
+        <p *ngIf="loginAdminForm.get('password')?.getError('required')">Password Required</p>
+    </div>
+  
+      <button>SUBMIT</button>
+    </form>
+  </div>
+  

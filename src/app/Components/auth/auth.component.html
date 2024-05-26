@@ -1,0 +1,83 @@
+<section class="auth-main-section  d-flex flex-column justify-content-between overflow-hidden">
+  <div class=" hhh   mt-2 py-3 d-flex justify-content-around align-items-center ">
+    <h1 routerLink="/dashboard" class="h1">ELDox<sub class="">.com</sub></h1>
+    <div class="icons d-flex justify-content-between  ">
+      <a href="https://www.facebook.com/eldox.com" target="_blank">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a href="https://www.instagram.com/eldox.com/" target="_blank">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="https://www.linkedin.com/company/eldox/" target="_blank">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+      <a href="https://twitter.com/eldoxcom" target="_blank">
+        <i class="fab fa-twitter"></i>
+      </a>
+
+
+    </div>
+
+
+  </div>
+  <div class="div mb-4 mt-3  d-flex justify-content-center ">
+    <div class="header    ">
+      <h1>welcome</h1>
+    </div>
+  </div>
+  
+
+  <div class="container-fluid w-75 mx-auto py-4  mb-5  rounded-5 overflow-hidden ">
+    <div class="row g-0  ">
+        <!-- left -->
+      <div class="col-md-6">
+        <div class="left py-3 px-3 d-flex flex-column  h-100  ">
+          <div class="d-flex justify-content-center gap-5 authMain">
+            <span
+              routerLinkActive="activeAuth"
+              routerLink="/auth/loginAdmin"
+              role="button"
+              >Welcome Login</span
+            >
+            <span
+              routerLinkActive="activeAuth"
+              routerLink="/auth/registerPatient"
+              role="button"
+              >Register Patient</span
+            >
+            
+          </div>
+          <div class="outer  my-auto  ">
+            <router-outlet></router-outlet>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right -->
+      <div class="col-md-6">
+        <div class="slider p-3 m-3 shadow  rounded-2   ">
+  
+          <owl-carousel-o [options]="customOptions">
+            
+            
+           
+            
+            
+            <ng-template carouselSlide><img   src="./assets/images/hh6.svg" alt="doctor"></ng-template>
+            <ng-template carouselSlide><img   src="./assets/images/hh7.svg" alt="doctor"></ng-template>
+            <ng-template carouselSlide><img   src="./assets/images/undraw_doctors_p6aq.svg" alt="doctor"></ng-template>
+            <ng-template carouselSlide><img   src="./assets/images/slider2.svg" alt="doctor"></ng-template>
+            
+          </owl-carousel-o>
+   
+         
+         
+         
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+</section>
+<app-footer></app-footer>
+

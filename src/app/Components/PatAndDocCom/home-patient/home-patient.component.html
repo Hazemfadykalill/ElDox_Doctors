@@ -1,0 +1,69 @@
+<section class="mainSection">
+    <div class="div container-fluid mx-auto d-flex align-items-center ">
+        <div class="homePatientsHeader">
+            <div class="content-home ms-2">
+                <!-- Text Animation -->
+                <ngx-typed-js
+                    [strings]="['Welcome Patients','Welcome In ElDox Hospital','Book Now To a Favorite Doctor','Add Advertisement', 'Nobody can argue this fact.']"
+                    [loop]="true" [typeSpeed]="50" [backSpeed]="50" [backDelay]="1000" [showCursor]="true"
+                    [cursorChar]="'|'" [shuffle]="true" [autoInsertCss]="true">
+                    <h1><span class="typing"></span></h1>
+                </ngx-typed-js>
+                <div class="p w-75 my-3 lead text-white">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, accusantium doloribus, expedita
+                        quas
+                        maiores aliquam dolor laudantium commodi hic aut error doloremque, labore consequuntur
+                        architecto totam
+                        ea unde assumenda vero vel? Nulla quibusdam natus blanditiis neque, est animi fugiat nesciunt
+                        rerum
+                        velit, vel aperiam dicta eligendi eveniet. Sequi natus sit optio sapiente voluptatem esse
+                        accusamus unde
+                        animi libero impedit odit autem recusandae repellat ad commodi eveniet deleniti, est dolorum
+                        quidem rem
+                        nostrum sint! Sequi eveniet, dolor incidunt exercitationem iste quis natus nostrum nesciunt ipsa
+                        praesentium mollitia nulla nisi officia voluptatem .</p>
+
+                </div>
+                <div class="homeBtn mt-5">
+                    <button class="btnOne" routerLink="/Doctors">Get start <i
+                            class="mx-2 fa-solid fa-arrow-right"></i></button>
+                    <button class="btnTwo" routerLink="/Booking">Your Books <i
+                            class=" mx-2 fa-regular fa-bookmark"></i></button>
+                </div>
+
+
+
+            </div>
+
+
+        </div>
+        <div class="homePatientsSlider p-4 container w-50 mx-auto  ">
+            <!-- <div class="topText mb-3 text-center">
+                <h1> <i class="fa-solid fa-star"></i>top Doctors <i class="fa-solid fa-star"></i></h1>
+            </div> -->
+
+
+            <swiper-container class="mySwiper" pagination="false" effect="coverflow" grab-cursor="true"
+                centered-slides="true" slides-per-view="auto" coverflow-effect-rotate="50" coverflow-effect-stretch="0"
+                coverflow-effect-depth="100" coverflow-effect-modifier="1" coverflow-effect-slide-shadows="true">
+
+                <swiper-slide *ngFor="let Doctor of AllDoctorsList">
+                    <div class="slide rounded-4 overflow-hidden  px-2  text-black bg-transparent ">
+                        <img [src]="'https://localhost:7198/images/'+Doctor.photoPath" [alt]="Doctor.fullName" class="w-100 " />
+                        <h1>{{Doctor.fullName}}</h1>
+
+                    </div>
+
+                </swiper-slide>
+                
+
+            </swiper-container>
+
+
+        </div>
+
+    </div>
+
+
+
+</section>

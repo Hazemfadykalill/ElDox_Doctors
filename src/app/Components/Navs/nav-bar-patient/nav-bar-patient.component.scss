@@ -1,0 +1,38 @@
+.navbar{
+    .logo{
+        cursor: pointer;
+    }
+    background-color: #0070cd !important;
+    // color: white !important;
+    .nav-item{
+         font-size: 15px;
+         font-weight: bold;
+         text-transform: capitalize;
+         padding: 8px 15px;
+         border-radius: 10px;
+         border: none;
+         cursor: pointer !important;
+         background-color: rgba(0,0,0,0.4); 
+        //  border: #0070cd 1px solid;
+         margin: 0 5px;
+       a{
+        color: white ;
+       }
+       
+ 
+    }
+    border-bottom: 1px solid #0070cd !important; 
+    .profile{
+        padding: 5px;
+        border-radius: 50%;
+        border: white 1px solid;
+        margin: 0 8px;
+        cursor: pointer;
+        i{
+            font-size: 30px !important;
+            color: white !important;
+          
+        }
+    }
+ 
+}

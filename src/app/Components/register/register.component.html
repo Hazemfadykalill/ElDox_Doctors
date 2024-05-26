@@ -1,0 +1,124 @@
+<form [formGroup]="registerForm" (ngSubmit)="handleForm()" class="form mt-5">
+  <p class="title">Welcome Patient</p>
+  <div class="flex">
+    <!-- First Name -->
+    <label>
+      <input #FirstName formControlName="firstName" class="input" type="text" placeholder=""  />
+      <span>First Name</span>
+      <div class="error w-100" *ngIf="
+          this.registerForm.get('firstName')?.errors &&
+          (this.registerForm.get('firstName')?.touched ||
+          FirstName.value.length > 0)
+        ">
+        <p *ngIf="this.registerForm.get('firstName')?.getError('required')">
+          first name required
+        </p>
+      </div>
+    </label>
+<!-- last Name -->
+    <label>
+      <input #LastName formControlName="lastName" class="input" type="text" placeholder=""  />
+      <span>Lastname</span>
+      <div class="error w-100" *ngIf="
+          this.registerForm.get('lastName')?.errors &&
+          (this.registerForm.get('lastName')?.touched ||
+          LastName.value.length > 0)
+        ">
+        <p *ngIf="this.registerForm.get('lastName')?.getError('required')">
+          first name required
+        </p>
+      </div>
+    </label>
+  </div>
+  <!-- Email -->
+  <label class="w-75 mx-auto">
+    <input #Email class="input" formControlName="email" type="email" placeholder=""  />
+    <span>Email</span>
+    <div class="error w-100" *ngIf="
+        this.registerForm.get('email')?.errors &&
+        (this.registerForm.get('email')?.touched || Email.value.length > 0)
+      ">
+      <p *ngIf="this.registerForm.get('email')?.getError('required')">
+        email required
+      </p>
+      <p *ngIf="this.registerForm.get('email')?.getError('email')">
+        email must example123@gmail.com
+      </p>
+    </div>
+  </label>
+  <!-- Password-->
+  <label class="w-75 mx-auto">
+    <input #input #Password formControlName="password" class="input" type="password" placeholder=""  />
+    <span>Password</span>
+    <div class="error w-100" *ngIf="
+        this.registerForm.get('password')?.errors &&
+        (this.registerForm.get('password')?.touched ||
+          Password.value.length > 0)
+      ">
+      <p *ngIf="this.registerForm.get('password')?.getError('required')">
+        password required
+      </p>
+      <p *ngIf="this.registerForm.get('password')?.getError('minlength')">
+        password must min length 8 char
+      </p>
+      <p *ngIf="this.registerForm.get('password')?.getError('pattern')">
+        Minimum eight characters, at least one uppercase letter, one lowercase
+        letter, one number and one special character:
+      </p>
+    </div>
+  </label>
+
+
+
+
+
+  <!-- Phone gender -->
+  <div class="flex">
+    <label class="w-75 mx-auto">
+      <input #Phone formControlName="phone" class="input" type="tel" placeholder=""  />
+      <span>Phone</span>
+      <div class="error w-100" *ngIf="
+          this.registerForm.get('phone')?.errors &&
+          (this.registerForm.get('phone')?.touched || Phone.value.length > 0)
+        ">
+        <p *ngIf="this.registerForm.get('phone')?.getError('required')">
+          phone required
+        </p>
+        <p *ngIf="this.registerForm.get('phone')?.getError('pattern')">
+          Phone must 01(1,2,5,0) and eight number
+        </p>
+      </div>
+    </label>
+    <!-- gender -->
+
+    <label class="w-75 mx-auto position-relative">
+      <input class="input" type="text" placeholder=""  />
+
+      <select #gender formControlName="gender" id="gender" class="input position-absolute start-0 end-0 bottom-0 top-0">
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+        <span>Gender</span>
+      </select>
+    </label>
+  </div>
+  <label class="w-75 mx-auto position-relative">
+    <input (change)="change($event)"  type="file" class="input" placeholder="" />
+
+  </label>
+  <!-- DateOfBirth -->
+  <label class="w-75 mx-auto">
+    <input #DateOfBirth formControlName="dateOfBirth" class="input" type="date" placeholder=""  />
+    <span>Date</span>
+    <div class="error w-100" *ngIf="
+        this.registerForm.get('dateOfBirth')?.errors &&
+        (this.registerForm.get('dateOfBirth')?.touched ||
+          DateOfBirth.value.length > 0)
+      ">
+      <p *ngIf="this.registerForm.get('dateOfBirth')?.getError('required')">
+        Date of Birth required
+      </p>
+    </div>
+  </label>
+
+  <button class="submit text-capitalize my-3 fw-bold">SignUP</button>
+</form>

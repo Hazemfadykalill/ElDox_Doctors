@@ -1,0 +1,78 @@
+<div class="mainSection container-fluid mt-5">
+    <!-- search -->
+    <!-- PrimeNg -->
+    <!-- name -->
+    <div class="search container w-75 mx-auto d-flex gap-4 ">
+        <input list="idSpecialize" (keyup)="allDoctorsById($event)" class="form-control-Hazem"
+            placeholder="SpecializeId" type="search" />
+        <datalist id="idSpecialize">
+            <option *ngFor="let item of listSpecialize" [value]="item.id">{{item.name}}</option>
+
+        </datalist>
+        <input (keyup)="allDoctorsByName($event)" type="search" placeholder="Name Doctor" class="form-control-Hazem">
+
+    </div>
+    <!-- Header -->
+    <div class=" header d-flex justify-content-center">
+        <div class="main-title my-4  ">
+            <h1>All Doctors </h1>
+        </div>
+    </div>
+
+    <!-- Show Doctor -->
+    <div class="container-fluid my-5 mx-2">
+        <div class="row g-4 justify-content-center">
+            <div class="col-md-3" *ngFor="let Doctor of doctorsDetails!|paginate: { id: 'paginationAllDoctors',
+            itemsPerPage: pagesObject!.pageSize,
+            currentPage:pagesObject!.currentPage,
+            totalItems: pagesObject!.totalCount }">
+                <div class="content rounded-4  shadow ">
+                    <div class="image overflow-hidden">
+                        <img [src]="'https://localhost:7198/images/'+Doctor.photoPath" height="270" class="w-100 "
+                            [alt]="Doctor.fullName">
+                        <div class="overlay">
+
+                        </div>
+                        <!-- [src]="'https://localhost:7198/images/'+Doctor.photoPath" -->
+
+
+                    </div>
+                    <div class="footer my-3 px-3">
+                        <h1>{{Doctor.fullName}}</h1>
+                        <h6>{{Doctor.specialize}}</h6>
+
+
+
+                    </div>
+                    <div class="btnBook  ">
+                        <button [routerLink]="['/bookDoctor',Doctor.id]" type="button" class=" d-block ms-auto btn-primary">Book
+                            Now</button>
+                    </div>
+
+
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+
+<!-- | paginate: { id: 'paginationAllDoctors',
+        itemsPerPage: patientsObject!.pageSize,
+        currentPage:patientsObject!.currentPage,
+        totalItems: patientsObject!.totalCount } -->
+   
+
+
+
+    <div class="pagination my-5 d-flex justify-content-center">
+        <pagination-controls id="paginationAllDoctors" (pageChange)="pageChanged($event)"
+            (pageBoundsCorrection)="pageChanged($event)" [maxSize]="9" [directionLinks]="true" [autoHide]="true"
+            [responsive]="true" previousLabel="Previous" nextLabel="Next" screenReaderPaginationLabel="Pagination"
+            screenReaderPageLabel="page" screenReaderCurrentLabel="You're on page">
+        </pagination-controls>
+    </div>
+</div>
+

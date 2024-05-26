@@ -1,0 +1,72 @@
+// label {
+//     display: block;
+//     margin-bottom: 1rem;
+//     color: #fff;
+//     font-size: 3rem;
+//     text-align: center;
+//     text-transform: uppercase;
+//   }
+
+.main-title{
+  width: fit-content;
+  h1{
+    font-size: 60px;
+  }
+}
+  
+  input {
+    width: 100%;
+    margin: 15px 0;
+    font-size: 20px;
+
+    // height: fit-content;
+    padding: 15px;
+    color: #fff;
+    
+    background-color: #11111d;
+    border: 1px solid #3b3b58;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  
+  input::placeholder {
+    color:white;
+  }
+  
+  input:focus {
+    outline: 0;
+  }
+  
+  input:focus,
+  input:hover {
+    border: 1px solid yellow;
+  }
+::-webkit-file-upload-button{
+    color: #000;
+    background-color: white;
+    padding: 10px;
+    border-radius: 15px;
+    box-shadow: 1px 0 1px 1px #6b4559;
+    outline: none;
+    border: none;
+    margin-right: 15px;
+    transition: all 0.5s;
+    cursor: pointer;
+    &:hover{
+        background-color: #198754;
+        color: white;
+    }
+}
+.btnAddForm{
+    background-color: #198754;
+    color: white;
+    padding: 20px 15px;
+    border: none;
+    outline: none;
+    transition: all 0.5s;
+    cursor: pointer;
+    &:hover{
+        background-color: #11111d;
+        color: white;
+    }
+}

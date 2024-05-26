@@ -1,0 +1,154 @@
+.mainSection {
+  .m {
+   
+    .main-title {
+      width: fit-content;
+      h1 {
+        font-size: 60px;
+        color: #0070cd;
+      }
+    }
+  }
+  //   body
+  .bodeDetails {
+    // image
+    .image {
+      overflow: hidden;
+      img {
+        transition: all 0.5s;
+
+        cursor: pointer;
+
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+    }
+    // information Doctors
+    .content {
+      h1 {
+        position: relative;
+        &::before {
+          content: "Dr/ ";
+          color: #0070cd;
+        }
+        // &::after{
+
+        //     content: "";
+        //     position: absolute;
+        //     bottom: -2px;
+        //     width: 30%;
+        //     left: 0;
+        //     height: 3px;
+        //     background-color: #ef0f0f;
+
+        // }
+      }
+      p {
+        position: relative;
+        &::before {
+          content: "Sp/ ";
+          color: #0070cd;
+        }
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: -4px;
+          width: 20%;
+          left: 0;
+          height: 3px;
+          background-color: #ef0f0f;
+        }
+      }
+
+      //   list icons
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 30px 0px;
+        li {
+          display: flex;
+          align-items: center;
+          margin: 15px 0px;
+          gap: 20px;
+          cursor: pointer;
+          span {
+            color: #ef0f0f;
+            font-weight: bold;
+          }
+          i {
+            font-size: 25px;
+            color: #0070cd;
+          }
+        }
+      }
+    }
+    // footerContent
+    .footerContent{
+      h1{
+        font-size: 50px ;
+        font-weight: bold;
+      }
+      .allDayes{
+        p-dropdown{
+          // width: 100% !important;
+          // background-color: #ef0f0f;
+          padding: 10px;
+        }
+      //   .p-dropdown .p-dropdown-label {
+      //     width: 100%;
+      //     border: 0 none;
+      // }
+      .p-dropdown {
+        display: inline-flex;
+        cursor: pointer;
+        position: relative;
+        -webkit-user-select: none;
+        user-select: none;
+        width: 100%;
+        padding: 15px;
+    }
+        p{
+          margin:0 ;
+          padding: 0;
+          text-transform: capitalize;
+          // font-size: 20px;
+          font-weight: bold;
+          font-style: italic;
+          color: #0070cd;
+        }
+        .oneDay{
+          .red{
+            background-color: #ef0f0f;
+
+          }
+          .blue{
+            background-color: #0070cd;
+          }
+          
+          
+          .he{
+           
+            p{
+              color: white;
+            }
+          }
+          .spans{
+            span{
+              cursor: pointer;
+              transition: all 0.5s;
+              padding: 10px;
+              color: #0070cd;
+              &:hover{
+                background-color: #0070cd;
+                color: white;
+              }
+
+
+            }
+          }
+        }
+      }
+    }
+  }
+}

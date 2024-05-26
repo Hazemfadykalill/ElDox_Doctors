@@ -1,0 +1,36 @@
+.profilePatients {
+  .main-title {
+    width: fit-content;
+    h1 {
+      font-size: 60px;
+    }
+  }
+  .content {
+    .footer {
+      ul {
+        list-style: none;
+        padding: 0;
+        li {
+            font-weight: bold;
+            padding: 10px;
+            cursor: pointer;
+          i {
+            font-size: 25px !important;
+            margin-right: 15px;
+          }
+        }
+      }
+    }
+    .book{
+        padding: 10px 15px;
+        background-color: #ef0f0f;
+        border: 0;
+        outline: 0;
+        transition: all 0.5s;
+        border-radius: 10px;
+        &:hover{
+            transform: translateY(-10px);
+        }
+    }
+  }
+}

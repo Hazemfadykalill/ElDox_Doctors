@@ -1,0 +1,81 @@
+.main-title{
+    width: fit-content;
+    h1{
+        font-size: 50px;
+    }
+}
+
+// .image{
+//     overflow: hidden;
+//     img{
+//         transition: all 0.5s;
+        
+//         cursor: pointer;
+        
+//         &:hover{
+//             transform: scale(1.1);
+//         }
+
+//     }
+// }
+
+.icons{
+    display: flex;
+align-items: center;
+   
+margin: 15px 0;
+p{
+    margin: 0;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+   color: #000;
+    font-style: italic;
+  
+
+}
+.icon{
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #198754;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+i{
+    font-size: 20px ;
+    color: white;
+}
+}
+
+.leftContent{
+    .leftHeader{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        span{
+            background-color: #198754;
+            padding: 15px;
+            border-radius: 10px;
+            margin-right: 10px;
+        }
+        h3{
+            &::before{
+                content: "S.P/ ";
+                color: #198754;
+            }
+            }
+            h1{
+                &::before{
+                    content: "DR/ ";
+                    color: #198754;
+                }
+
+            }
+
+    }
+   
+}

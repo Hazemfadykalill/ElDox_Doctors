@@ -1,0 +1,40 @@
+<section class="profilePatients">
+    <div class="h  ">
+        <div class="main-title my-4 mx-auto  ">
+            <h1>Welcome Patients</h1>
+        </div>
+    </div>
+    <div class="content mt-5">
+        <div class="img text-center">
+            <img *ngIf="patientDetails?.details?.photoPath;else emptyImage " class=" rounded-circle" height="200" width="200" [src]="'https://localhost:7198/images/'+patientDetails?.details?.photoPath"
+                [alt]="patientDetails?.details?.fullName">
+        
+                
+               
+            <h1 class="text-capitalize">{{patientDetails?.details?.fullName}}</h1>
+
+        </div>
+        <div class="footer">
+            <ul>
+                <li><i class="fa-solid fa-envelope"></i> {{patientDetails?.details?.email}}</li>
+                <li><i class="fa-solid fa-phone"></i> {{patientDetails?.details?.phone}}</li>
+                <li><i class="fa-solid fa-person-half-dress"></i> {{patientDetails?.details?.gender}}</li>
+                <li><i class="fa-solid fa-calendar-days"></i> {{patientDetails?.details?.dateOfBirth|date}}</li>
+
+            </ul>
+        </div>
+        <div class="b text-center  d-flex justify-content-center">
+            <button routerLink="/Booking" (click)="bookPatient(patientDetails?.details?.id)"
+                class="book d-block ">Booking</button>
+
+        </div>
+
+
+
+    </div>
+    <ng-template #emptyImage >
+        <img class=" rounded-circle" height="200" width="200" src="./assets/images/lostPatients.png"
+        [alt]="patientDetails?.details?.fullName">
+    </ng-template>
+
+</section>

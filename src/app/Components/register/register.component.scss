@@ -1,0 +1,191 @@
+.form {
+  display: flex;
+  // flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  padding:10px 20px;
+  border-radius: 20px;
+  position: relative;
+  background-color: black;
+  color: #fff;
+  border: 1px solid #f9b17a;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: -1px;
+  position: relative;
+  display: flex;
+  font-weight: 600;
+  text-transform: capitalize;
+  align-items: center;
+  padding-left: 30px;
+  color: #f9b17a;
+}
+
+.title::before {
+  width: 18px;
+  height: 18px;
+}
+
+.title::after {
+  width: 18px;
+  height: 18px;
+  animation: pulse 1s linear infinite;
+}
+
+.title::before,
+.title::after {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  left: 0px;
+  background-color: #f9b17a;
+}
+
+//   .message, 
+//   .signin {
+//     font-size: 14.5px;
+//     color: rgba(255, 255, 255, 0.7);
+//   }
+
+
+
+
+
+
+.flex {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  gap: 10px;
+}
+
+.form label  {
+  position: relative;
+}
+
+.form label  .input {
+  background-color: transparent;
+  color: #fff;
+  width: 100%;
+ 
+  padding: 20px 05px 05px 10px;
+  outline: 0;
+  border: 1px solid #f9b17a;
+  border-radius: 10px;
+  transition: all 0.5s;
+  &:hover{
+      transform: translateY(-10px);
+  }
+}
+
+.form label  .input + span {
+  color: white;
+  position: absolute;
+  left: 10px;
+  top: 0px;
+  font-size: 0.9em;
+  cursor: text;
+  transition: 0.3s ease;
+}
+
+.form label  .input:placeholder-shown + span {
+  top: 12.5px;
+  font-size:1em;
+}
+
+.form label  .input:focus + span,
+.form label .input:valid + span {
+  color: white;
+  top: -10px;
+  font-size: 0.9em;
+  font-weight: 600;
+}
+
+.input {
+  font-size:medium ;
+}
+
+.submit {
+  border: none;
+  outline: none;
+  padding: 10px 15px;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 16px;
+  margin-top: 10px;
+  transform: .3s ease;
+  background-color: #f9b17a;
+}
+
+.submit:hover {
+  background-color: #2d3250;
+  color: white;
+}
+
+@keyframes pulse {
+  from {
+    transform: scale(0.9);
+    opacity: 1;
+  }
+
+  to {
+    transform: scale(1.8);
+    opacity: 0;
+  }
+}
+
+.input[type="file"] {
+  padding: 10px;
+ 
+  border: none;
+  background-color: transparent !important;;
+  border-radius: 5px;
+  width: 100%;
+  cursor: pointer;
+}
+
+.d{
+  background-color: #333;
+  color: #fff;
+  width: 100%;
+ 
+  padding: 20px 05px 05px 10px;
+  outline: 0;
+  border: 1px solid #f9b17a;
+  border-radius: 10px;
+}
+
+.magicpattern { 
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: repeat;
+  background-image: url("data:image/svg+xml;utf8,%3Csvg height=%22auto%22 viewBox=%220 0 2000 1400%22 xmlns=%22http:%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath d=%22M0 1400h26.23v-399.416q0-13.115-13.115-13.115T0 1000.584ZM32.787 1400h26.23v-294.105q0-13.115-13.115-13.115t-13.115 13.115ZM65.574 1400h26.23V989.903q0-13.115-13.115-13.115t-13.115 13.115ZM98.36 1400h26.23V635.927q0-13.115-13.115-13.115-13.114 0-13.114 13.115ZM131.148 1400h26.229V961.094q0-13.115-13.115-13.115-13.114 0-13.114 13.115ZM163.934 1400h26.23V788.622q0-13.115-13.115-13.115t-13.115 13.115ZM196.721 1400h26.23V279.973q0-13.115-13.115-13.115t-13.115 13.115ZM229.508 1400h26.23V288.484q0-13.115-13.115-13.115t-13.115 13.115ZM262.295 1400h26.23V787.593q0-13.115-13.115-13.115t-13.115 13.115ZM295.082 1400h26.23V972.231q0-13.114-13.115-13.114t-13.115 13.114ZM327.869 1400h26.23V281.06q0-13.115-13.115-13.115t-13.115 13.115ZM360.656 1400h26.23V628.904q0-13.115-13.116-13.115-13.114 0-13.114 13.115ZM393.443 1400h26.23V215.703q0-13.114-13.116-13.114-13.114 0-13.114 13.114ZM426.23 1400h26.229V845.75q0-13.114-13.115-13.114-13.114 0-13.114 13.115ZM459.016 1400h26.23V204.175q0-13.115-13.115-13.115t-13.115 13.115ZM491.803 1400h26.23V643.5q0-13.115-13.115-13.115T491.803 643.5ZM524.59 1400h26.23V887.502q0-13.115-13.115-13.115t-13.115 13.115ZM557.377 1400h26.23V806.055q0-13.115-13.115-13.115t-13.115 13.115ZM590.164 1400h26.23V945.559q0-13.115-13.115-13.115t-13.115 13.115ZM622.95 1400h26.23V958.004q0-13.115-13.114-13.115-13.115 0-13.115 13.115ZM655.738 1400h26.23V197.448q0-13.115-13.116-13.115-13.114 0-13.114 13.115ZM688.525 1400h26.23V291.297q0-13.115-13.116-13.115-13.114 0-13.114 13.115ZM721.311 1400h26.23V193.16q0-13.115-13.115-13.115t-13.115 13.115ZM754.098 1400h26.23V321.435q0-13.114-13.115-13.114t-13.115 13.114ZM786.885 1400h26.23V223.112q0-13.115-13.115-13.115t-13.115 13.115ZM819.672 1400h26.23V881.897q0-13.115-13.115-13.115t-13.115 13.115ZM852.459 1400h26.23V894.19q0-13.115-13.115-13.115t-13.115 13.115ZM885.246 1400h26.23V231.295q0-13.115-13.115-13.115t-13.115 13.115ZM918.033 1400h26.23V920.99q0-13.114-13.115-13.114t-13.115 13.114ZM950.82 1400h26.23V246.755q0-13.115-13.116-13.115-13.114 0-13.114 13.115ZM983.607 1400h26.23V205.383q0-13.115-13.116-13.115-13.114 0-13.114 13.115ZM1016.393 1400h26.23V408.429q0-13.115-13.115-13.115t-13.115 13.115ZM1049.18 1400h26.23V974.05q0-13.115-13.115-13.115t-13.115 13.115ZM1081.967 1400h26.23V916.657q0-13.115-13.115-13.115t-13.115 13.115ZM1114.754 1400h26.23V680.737q0-13.115-13.115-13.115t-13.115 13.115ZM1147.541 1400h26.23V227.451q0-13.114-13.115-13.114t-13.115 13.114ZM1180.328 1400h26.23V307.4q0-13.114-13.115-13.114t-13.115 13.114ZM1213.115 1400h26.23V265.346q0-13.115-13.115-13.115t-13.115 13.115ZM1245.902 1400h26.23V495.395q0-13.115-13.116-13.115-13.114 0-13.114 13.115ZM1278.689 1400h26.229V847.12q0-13.114-13.115-13.114-13.114 0-13.114 13.114ZM1311.475 1400h26.23V766.953q0-13.115-13.115-13.115t-13.115 13.115ZM1344.262 1400h26.23v-392.233q0-13.115-13.115-13.115t-13.115 13.115ZM1377.05 1400h26.229V313.367q0-13.115-13.115-13.115t-13.115 13.115ZM1409.836 1400h26.23V481.908q0-13.115-13.115-13.115t-13.115 13.115ZM1442.623 1400h26.23V257.665q0-13.115-13.115-13.115t-13.115 13.115ZM1475.41 1400h26.23V393.269q0-13.115-13.115-13.115t-13.115 13.115ZM1508.197 1400h26.23v-358.924q0-13.115-13.116-13.115-13.114 0-13.114 13.115ZM1540.984 1400h26.23V999.26q0-13.115-13.116-13.115-13.114 0-13.114 13.115ZM1573.77 1400H1600V811.58q0-13.115-13.115-13.115t-13.115 13.115ZM1606.557 1400h26.23V710.632q0-13.115-13.115-13.115t-13.115 13.115ZM1639.344 1400h26.23V679.523q0-13.114-13.115-13.114t-13.115 13.114ZM1672.131 1400h26.23V328.535q0-13.115-13.115-13.115t-13.115 13.115ZM1704.918 1400h26.23v-329.122q0-13.115-13.115-13.115t-13.115 13.115ZM1737.705 1400h26.23V162.229q0-13.115-13.115-13.115t-13.115 13.115ZM1770.492 1400h26.23V710.994q0-13.114-13.115-13.114t-13.115 13.114ZM1803.279 1400h26.23V326.887q0-13.115-13.116-13.115-13.114 0-13.114 13.115ZM1836.066 1400h26.23v-281.815q0-13.115-13.116-13.115-13.114 0-13.114 13.115ZM1868.852 1400h26.23V507.888q0-13.115-13.115-13.115t-13.115 13.115ZM1901.64 1400h26.229V685.621q0-13.115-13.115-13.115t-13.115 13.115ZM1934.426 1400h26.23V751.727q0-13.115-13.115-13.115t-13.115 13.115ZM1967.213 1400h26.23V530.235q0-13.114-13.115-13.114t-13.115 13.114Z%22 fill=%22%232d3250%22%2F%3E%3C%2Fsvg%3E");
+}
+select{
+  // z-index: -10;
+}
+
+::-webkit-file-upload-button{
+  color: #000;
+  background-color: #f9b17a;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 15px;
+  box-shadow: 1px 0 1px 1px #6b4559;
+  outline: none;
+  border: none;
+  margin-right: 15px;
+  transition: all 0.5s;
+  cursor: pointer;
+  &:hover{
+      background-color: #2d3250;
+      color: white;
+  }
+}

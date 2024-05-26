@@ -1,0 +1,208 @@
+.mainSection {
+  // start header
+  .header {
+    .main-title {
+      width: fit-content;
+      h1 {
+        font-size: 60px;
+      }
+    }
+  }
+  //   All Doctor carts
+  // first search input
+  .search {
+    .form-control-Hazem {
+      width: 50%;
+      padding: 10px;
+      margin: 15px;
+      border-radius: 10px;
+      font-size: 20px;
+      border: 0;
+      color: white;
+      caret-color: white;
+      background-color: #000;
+      outline: 0;
+      &::placeholder {
+        color: white;
+        font-style: italic;
+      }
+    }
+  }
+  //   card
+  .container-fluid {
+    .content {
+      overflow: hidden;
+      position: relative;
+      &:hover {
+        img {
+          // transition: all 0.5s;
+          transform: scale(1.1);
+        }
+        .btnBook{
+            bottom: 20px;
+
+        }
+        .image .overlay{
+            top: 0;
+        }
+      
+      }
+      .image{
+        position: relative;
+        .overlay{
+            position: absolute;
+            transition: all 0.5s;
+            top: 150%;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0,0,0,0.5);
+        }
+      }
+      img {
+        transition: all 0.5s;
+        // transform: scale(1.1);
+      }
+      .footer {
+        overflow: hidden;
+        position: relative;
+
+        h1 {
+          position: relative;
+          &::before {
+            content: "Dr/ ";
+            color: #0070cd;
+          }
+          // &::after{
+
+          //     content: "";
+          //     position: absolute;
+          //     bottom: -2px;
+          //     width: 30%;
+          //     left: 0;
+          //     height: 3px;
+          //     background-color: #ef0f0f;
+
+          // }
+        }
+        h6 {
+          position: relative;
+          &::before {
+            content: "Sp/ ";
+            color: #0070cd;
+          }
+          &::after {
+            content: "";
+            position: absolute;
+            bottom: -4px;
+            width: 20%;
+            left: 0;
+            height: 3px;
+            background-color: #ef0f0f;
+          }
+        }
+      }
+      .btnBook {
+        position: absolute;
+        bottom: -100px;
+        right: 20px;
+        transition: all 0.5s;
+
+        button {
+          background-color: #ef0f0f !important;
+        }
+      }
+    }
+  }
+  ::ng-deep{
+   
+    .ngx-pagination .current {
+       
+        background: #ef0f0f !important;
+        
+    }
+    .ngx-pagination  {
+          
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+  
+      }
+      .ngx-pagination li  {
+          width: 40px;
+          height: 40px;
+          border-radius: 100% !important;
+          background: #f8f8f8;
+        display: flex !important;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        &.small-screen{
+            display: none !important;
+  
+        }
+        &.pagination-previous,
+        &.pagination-next{
+            a,span{
+                width: 100%;
+                height: 100%;
+                border-radius: 50%;
+                overflow: hidden;
+                color:white !important;
+                font-size: 1px;
+  
+            }
+           
+        }
+  
+        
+        }
+  
+  .ngx-pagination .pagination-previous a::before,
+  .ngx-pagination .pagination-previous.disable::before,
+  .ngx-pagination .pagination-next::before{
+    margin-left: 0px !important;
+    font-size: 26px;
+    margin-top: -8px;
+    position:absolute ;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    // border: 1px solid red;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    color: #ef0f0f !important;
+    left: 0;
+    // top: 0;
+    pointer-events: none;
+  
+  
+  
+  }
+  .ngx-pagination .pagination-next::before{
+    content: "\bb";
+  }
+  
+  .ngx-pagination .pagination-next::after{
+    display: none !important;
+  }
+  .ngx-pagination .pagination-previous.disable::before,
+  .ngx-pagination .pagination-next.disable::before
+  {
+    opacity: 0.4 ;
+  }
+  .ngx-pagination .pagination-previous.disable:hover{
+  
+   background:#f8f8f8 ;
+  }
+  
+  .ngx-pagination a:hover,
+  .ngx-pagination button:hover{
+    background: initial !important;
+  
+  }
+  
+  }
+}

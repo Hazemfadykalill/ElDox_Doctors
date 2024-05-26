@@ -1,0 +1,56 @@
+
+.navbar{
+    background-color: #198754;
+    .navbar-nav{
+        // background-color: #198754 !important;
+        .admin{
+            align-items: center;
+            justify-content: center;
+        }
+    }
+    .logo{
+        cursor: pointer;
+    }
+    .right{
+        i{
+            font-size: 25px;
+        }
+    }
+    li{
+        span{
+            margin: 10px 10px 10px  auto;
+           padding: 15px 15px;
+           border: 0;
+           outline: 0;
+           border-radius: 15px;
+           font-weight: bold;
+    
+            background-color: #000;
+            // margin: 15px 10px;
+            cursor: pointer;
+          
+        }
+    }
+}
+
+.activeNav{
+  background-color: white !important;
+  font-weight: 900;
+    
+}
+
+.admin{
+    background-color: white;
+ 
+    .image{
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
+    }
+    h1{
+        padding: 0px;
+        margin: 0px;
+        font-style: italic;
+   
+    }
+}

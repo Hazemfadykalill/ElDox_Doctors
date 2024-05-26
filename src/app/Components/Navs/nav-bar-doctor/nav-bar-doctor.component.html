@@ -1,0 +1,53 @@
+<!-- NavBar Patients -->
+<nav class="navbar navbar-expand-lg bg-body-tertiary py-3 fixed-top">
+    <div class="container-fluid mx-5 ">
+
+        <div (click)="BackHome()" class="logo d-flex align-items-center gap-2 text-white">
+            <!-- <i #navBtn role="button" class="fa-solid fa-bars fa-beat-fade fa-2x text-white me-3"></i> -->
+            <img src="./assets/images/icons8-clinic-64.png" alt="" />
+            <h1>ELDox<sub class="text-danger">.com</sub></h1>
+        </div>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                <li>
+                    <div class="contentN d-flex gap-3">
+                        <div class="contentSearch">
+                            <input type="search" placeholder="search.."
+                                class="search p-2 rounded-2 w-100 bg-black border-0" />
+
+                            <i class="fa-solid fa-magnifying-glass position-absolute"></i>
+                        </div>
+                        <button class="navBtn p-2 rounded-2 bg-black border-0">
+                            search
+                        </button>
+                    </div>
+                </li>
+            </ul>
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+           
+                <li routerLink="/welcome"  routerLinkActive="activeNav" class="nav-item">
+                    <a class="nav-link ">Home</a>
+                </li>
+
+                <li routerLink="/Book"  routerLinkActive="activeNav" class="nav-item">
+                    <a class="nav-link ">Booking</a>
+                </li>
+                <li  routerLink="/Appointment"  routerLinkActive="activeNav" class="nav-item">
+                    <a class="nav-link">Appointments</a>
+                </li>
+                <li (click)="logOut()" class="nav-item">
+                    <a class="nav-link ">LogOut</a>
+                </li>
+                <li (click)="profileDoctors()"  class="profile">
+                    <a class="nav-link"><i class="fa-solid fa-user-doctor"></i></a>
+                </li>
+
+            </ul>
+
+        </div>
+    </div>
+</nav>

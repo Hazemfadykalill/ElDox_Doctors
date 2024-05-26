@@ -1,0 +1,107 @@
+.mainSection {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+
+    // ======
+   
+  
+
+  
+    background-image: radial-gradient(
+        circle,
+        rgba(238, 174, 202, 0.5) 0%,
+        rgba(148, 187, 233, 1) 100%
+      ),
+      url("../../../../assets/images/bak1.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    .div {
+      .homePatientsHeader {
+        .content-home {
+          h1 {
+            font-size: 70px;
+            color: #ef0f0f;
+            font-weight: bold;
+          }
+          .p {
+            p {
+              font-size: 20px;
+            }
+          }
+          .homeBtn {
+            i {
+              font-size: 25px;
+              // font-weight: bold;
+            }
+  
+            button {
+              // width: 200px;
+              // height: 50px;
+              border-radius: 10px;
+              border: none;
+              outline: none;
+              padding: 15px 30px;
+              cursor: pointer;
+              font-size: 20px;
+              font-weight: bold;
+              color: #fff;
+              margin-right: 20px;
+            }
+            .btnOne {
+              transition: all 0.5s;
+              background-color: #0070cd;
+              &:hover {
+                background-color: #ef0f0f;
+              }
+            }
+            .btnTwo {
+              transition: all 0.5s;
+              // border: 1px solid #0070cd;
+              background-color: #ef0f0f;
+              // color: #000;
+              // background-color: #0070cd;
+              &:hover {
+                border: 0;
+                background-color: #0070cd;
+              }
+            }
+          }
+        }
+      }
+      .homePatientsSlider {
+     
+        swiper-slide {
+          background-position: center;
+          background-size: cover;
+          width: 400px;
+          
+        }
+  
+        swiper-slide img {
+          display: block;
+          height: 270px;
+        }
+  
+        swiper-slide .slide h1 {
+          position: relative;
+          &::before {
+            content: "DR/ ";
+            color: #0070cd;
+          }
+          &::after {
+            content: "";
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 50%;
+            height: 2px;
+            background-color: #ef0f0f;
+          }
+        }
+      }
+    }
+  }
+  

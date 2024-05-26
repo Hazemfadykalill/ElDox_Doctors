@@ -1,0 +1,24 @@
+.updataCoupons{
+    .main-title{
+        width: fit-content;
+        h1{
+          font-size: 60px;
+        }
+      }
+
+      input{
+        padding: 10px;
+        // margin: 10px;
+        margin-top: 15px;
+        background-color: black;
+        caret-color: white;
+        outline: none !important;
+        border-radius: 10px;
+        color: white;
+        
+      }
+      ::placeholder{
+        color: white !important; 
+        font-size: 20px;
+    }
+}

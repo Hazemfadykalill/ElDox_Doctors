@@ -1,0 +1,51 @@
+.mainSection {
+    // start header
+    .header {
+      .main-title {
+        width: fit-content;
+        h1 {
+          font-size: 60px;
+        }
+      }
+    }
+    //   All Doctor carts
+    // first search input
+    .search {
+      .form-control-Hazem {
+        width: 50%;
+        padding: 10px;
+        margin: 15px;
+        border-radius: 10px;
+        font-size: 20px;
+        border: 0;
+        color: white;
+        caret-color: white;
+        background-color: #000;
+        outline: 0;
+        &::placeholder {
+          color: white;
+          font-style: italic;
+        }
+      }
+    }
+    //   card
+    .spl{
+      border-bottom: 1px solid #ef0f0f;
+      border-right: 1px solid #ef0f0f;
+      border-top: 1px solid #0070cd;
+      border-left: 1px solid #0070cd;
+        transition: all 0.5s;
+        &:hover{
+            transform: scale(1.1);
+        }
+        h6{
+            // color: #ef0f0f;
+            &::before{
+                content: "sp/ ";
+                color: #0070cd;
+            }
+        }
+    }
+   
+  }
+  

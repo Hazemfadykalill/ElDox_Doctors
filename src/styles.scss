@@ -1,0 +1,519 @@
+@import url("https://fonts.googleapis.com/css2?family=Romanesco&display=swap");
+@import "ngx-owl-carousel-o/lib/styles/scss/owl.carousel";
+@import "ngx-owl-carousel-o/lib/styles/scss/owl.theme.default";
+
+@import "node_modules/@costlydeveloper/ngx-awesome-popup/styles/theme";
+@import "primeng/resources/themes/lara-light-blue/theme.css";
+@import "primeng/resources/primeng.css";
+@import '~primeng/resources/themes/nova/theme.css';
+@import "primeng/resources/themes/lara-light-blue/theme.css";
+@import "primeng/resources/primeng.css";
+
+$main-color: #222c3c;
+
+.bg-main-color {
+  background-color: $main-color;
+}
+
+.main-color {
+  background-color: $main-color;
+  color: white;
+}
+
+.text-main-color {
+  color: $main-color;
+}
+.contentN {
+  .contentSearch {
+    position: relative;
+    i {
+      top: 10px;
+      right: 10px;
+      bottom: 10px;
+      color: white;
+      font-size: 15px;
+    }
+    input {
+      outline: 0;
+      caret-color: white;
+      color: white;
+    }
+    input::placeholder {
+      color: white;
+    }
+  }
+
+  .navBtn {
+    text-transform: capitalize;
+    color: white;
+    background-color: black;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Romanesco", cursive;
+  font-weight: bold;
+  font-size: 40px;
+}
+
+.activeLink {
+  background-color: #198754;
+  color: white !important;
+  font-weight: bold;
+
+  text-transform: capitalize;
+
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+}
+
+.NavButton {
+  border: 0;
+  background-color: black;
+  color: white;
+  text-transform: capitalize;
+  padding: 10px 10px;
+  border-radius: 10px;
+  transition: all 0.5s;
+
+  &:hover {
+    transform: translateY(-8px);
+  }
+}
+
+.mainD {
+  // background-color: #198754;
+
+  span {
+    text-transform: capitalize;
+    // border:solid 2px #000 ;
+    padding: 10px;
+    // border-bottom: 2px solid red;
+    // transition: all 0.5s;
+    color: #000;
+    font-weight: bold;
+    font-size: 20px;
+
+    // &:hover{
+    //     background-color: #222c3c;
+    //     color: white;
+    //     transform: translateY(-10px);
+    // }
+  }
+}
+
+.authMain {
+  span {
+    background-color: black;
+    color: white ;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+  
+    font-weight: bold;
+    text-transform: capitalize;
+
+    position: relative;
+    &::after {
+      position: absolute;
+      content: "";
+      width: 0;
+      // transform: translateX(-50%);
+
+      height: 3px;
+      background-color: red;
+      bottom: 0;
+      left: 0;
+      transition: all 0.5s;
+    }
+    &:hover {
+      &::after {
+        width: 70%;
+      }
+    }
+  }
+}
+.activeAuth{
+  background-color: red !important;
+  font-weight: bold;
+ 
+}
+
+// Login Admin
+.form-container {
+  background: linear-gradient(#000, #000) padding-box,
+    linear-gradient(120deg, transparent 25%, #1cb0ff, #40ff99) border-box;
+  border: 2px solid transparent;
+  padding: 32px 24px;
+  font-size: 14px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  box-sizing: border-box;
+
+  border-radius: 16px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.heading {
+  font-size: 80px;
+  font-weight: bold;
+}
+
+.form-input {
+  color: white;
+  background: transparent;
+  border: 1px solid #f9b17a;
+  border-radius: 5px;
+  padding: 8px;
+  outline: none;
+}
+
+button {
+  border-radius: 5px;
+  text-transform: capitalize;
+  font-weight: 600;
+  padding: 8px 13px;
+  background: #f9b17a;
+  color: white;
+  border: none;
+  outline: none;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #424769;
+  transform: translateY(-10px);
+}
+
+.form-group {
+  display: flex;
+  width: 70%;
+  flex-direction: column;
+  gap: 5px;
+  color: #414141;
+  transition: all 0.5s;
+  position: relative;
+  &:hover {
+    width: 90%;
+  }
+}
+
+.form-group label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 5px;
+  pointer-events: none;
+  transition: 0.5s;
+  color: white;
+
+  font-size: 14px;
+}
+
+.form-group input:focus ~ label,
+.form-group input:valid ~ label {
+  top: -16px;
+  left: 0;
+  background: transparent padding-box;
+  padding: 10px 0 0 5px;
+  color: white;
+
+  font-size: 18px;
+}
+
+.error {
+  text-align: center;
+  width: 50%;
+  margin: 10px auto;
+  background-color: red;
+  color: white;
+  border-radius: 10px;
+  padding: 15px 10px;
+  p {
+    margin: 0;
+    padding: 0;
+    text-transform: capitalize;
+  }
+}
+//   login register patients
+.custom-content {
+  .footerAllDoctorP{
+    .see-more {
+      background-color: #198754;
+      display: block;
+  
+      font-weight: bold;
+    }
+    i{
+      font-size: 25px;
+      color: #198754;
+
+    }
+
+  }
+
+
+}
+
+//  btn not found
+.notFoundBtn {
+  padding: 10px 20px;
+  font-weight: bold;
+  background-color: #000;
+  border: none;
+  color: white;
+  transition: all 0.5s;
+  &:hover {
+    background-color: red;
+    color: white;
+    border: 0;
+  }
+}
+
+// Main Tittle
+.main-title {
+  h1 {
+    font-size: 60px;
+    font-weight: bold;
+    position: relative;
+    // overflow: hidden;
+    &:after {
+      position: absolute;
+      content: "";
+      bottom: -7px;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background-color: #2d3250;
+    }
+    &::before {
+      position: absolute;
+      content: "";
+      bottom: -15px;
+
+      transform: translateX(50%);
+      text-align: center;
+      width: 50%;
+      height: 4px;
+      background-color: #2d3250;
+    }
+  }
+}
+
+// search doctors
+.container {
+  position: relative;
+  box-sizing: border-box;
+  width: fit-content;
+  // background-color: #198754;
+}
+
+.mainbox {
+  box-sizing: border-box;
+  position: relative;
+  width: 230px;
+  height: 50px;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: center;
+  border-radius: 160px;
+  background-color: rgb(0, 0, 0);
+  transition: all 0.3s ease;
+}
+
+.checkbox:focus {
+  border: none;
+  outline: none;
+}
+
+.checkbox:checked {
+  right: 10px;
+}
+
+.checkbox:checked ~ .mainbox {
+  width: 50px;
+}
+
+.checkbox:checked ~ .mainbox .search_input {
+  width: 0;
+  height: 0px;
+}
+
+.checkbox:checked ~ .mainbox .iconContainer {
+  padding-right: 8px;
+}
+
+.checkbox {
+  box-sizing: border-box;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  right: 17px;
+  top: 10px;
+  z-index: 9;
+  cursor: pointer;
+  appearance: none;
+}
+
+.search_input {
+  box-sizing: border-box;
+  height: 100%;
+  width: 170px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  padding-bottom: 4px;
+  padding-left: 10px;
+  font-size: 1em;
+  color: white;
+  transition: all 0.3s ease;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.search_input::placeholder {
+  color: rgba(255, 255, 255, 0.776);
+}
+
+.iconContainer {
+  box-sizing: border-box;
+  padding-top: 5px;
+  width: fit-content;
+  transition: all 0.3s ease;
+}
+
+.search_icon {
+  box-sizing: border-box;
+  fill: white;
+  font-size: 1.3em;
+}
+
+// custom div
+.customDiv {
+  span {
+    background-color: #198754;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+  }
+  h1 {
+    position: relative;
+    &::before {
+      content: "DR/ ";
+      color: #198754;
+      font-weight: bold;
+    }
+  }
+  .img {
+    position: relative;
+    &:hover {
+      .overlay {
+        top: 0;
+      }
+    }
+
+    img {
+      transition: all 0.6s;
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+    .overlay {
+      position: absolute;
+      transition: all 0.6s;
+      top: 150%;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      transition: all 0.5s;
+      display: flex;
+      flex-direction: column;
+      justify-content: start;
+      span {
+        margin: 10px 10px 10px auto;
+
+        width: fit-content;
+        background-color: #198754;
+        // margin: 15px 10px;
+        cursor: pointer;
+        i {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+}
+
+tr {
+  span {
+    padding: 7px;
+  }
+}
+
+// buttons add doctors
+.btnAddDoctors {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #198754;
+  padding: 20px;
+  border-radius: 15px;
+  z-index: 999;
+  transition: all 0.5s;
+  &:hover {
+    background-color: red;
+    transform: translateY(-15px);
+  }
+  i {
+    color: white;
+    font-size: 25px;
+  }
+}
+h4 {
+  position: relative;
+  font-size: 25px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  &::before {
+    content: "SP/ ";
+    color: #198754;
+    font-weight: bold;
+  }
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 50%;
+    height: 4px;
+    background-color: #198754;
+  }
+}
+
+
+// Patients and doctors
+.activeNav{
+  background-color: black !important;
+  color: black ;
+
+}
+
+// Pagination

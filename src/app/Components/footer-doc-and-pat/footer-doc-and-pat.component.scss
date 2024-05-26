@@ -1,0 +1,70 @@
+.footerPathAndDoc {
+  background-color: #0070cd;
+  // background-image:linear-gradient(to right, rgba(53, 29, 123, 0.6), rgba(62, 40, 150, 0.6)), url('../../../assets/images/bak2.webp');
+  p {
+    padding: 0px;
+    margin: 0px;
+  }
+  .one {
+    .logo {
+      h1 {
+        color: white;
+        font-size: 4rem;
+      }
+    }
+  }
+  .two {
+    p {
+      color: white;
+      font-weight: bold;
+      font-size: 25px;
+      text-transform: capitalize;
+    }
+  }
+  .list {
+    // width: 100%;
+    ul {
+      padding: 0;
+      li {
+        margin: 10px 0px;
+        padding: 10px;
+        list-style: none;
+        transition: all 0.5s;
+        &:hover {
+          background-color: rgba(0, 0, 0, 0.5);
+          border-radius: 10px;
+          transform: translateX(-5px);
+        }
+        a {
+          color: white;
+          font-weight: bold;
+          font-size: 18px;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+  .contentFive {
+    img {
+      cursor: pointer;
+    }
+    .icons {
+      i {
+        color: white;
+        margin: 15px 15px 15px 0px;
+        font-size: 35px;
+        cursor: pointer;
+      }
+    }
+  }
+  .foot-content {
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    a {
+      text-decoration: none;
+      color: red;
+    }
+  }
+}

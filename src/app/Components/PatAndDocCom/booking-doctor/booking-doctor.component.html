@@ -1,0 +1,136 @@
+<!-- Booking Doctor -->
+<section class="DoctorBooking mt-5 ">
+    <!-- Header -->
+    <div class="header d-flex justify-content-center my-2">
+        <div class="main-title  d-flex gap-4 align-items-center  ">
+            <h1>All Booking Doctors </h1>
+            <i class="fa-regular fa-bookmark fa-fade"></i>
+        </div>
+
+    </div>
+
+    <!-- Body -->
+    <div class="body container p-0  shadow rounded-3 my-5  overflow-hidden ">
+        <!-- Filter -->
+        <div class="filter bg-dark-subtle d-flex mb-5  align-items-center justify-content-between ">
+            <!-- Name Patients -->
+            <div class="inputName ms-3 ">
+                <input (keyup)="getPatientByName($event)"  type="text" placeholder="Search Name Patients*" >
+
+            </div>
+
+            <!-- Days -->
+            <div class="Days">
+                <input (change)="filterDay($event)" type="text" list="idSpecialize" id="SpecializationId" placeholder="All Days" />
+                <datalist id="idSpecialize">
+                    <option *ngFor="let item of allPatient">{{item.appointment|dayCustom}}</option>
+
+                </datalist>
+            </div>
+            <!-- Gender -->
+            <div class="gender d-flex gap-4">
+                <div class="form-check ">
+                    <input #inputGender (click)="male('Male',$event)" class="form-check-input" type="radio" name="flexRadioDefault"
+                        id="flexRadioDefault1">
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        Male
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input #inputGender (change)="female('Female',$event)" class="form-check-input" type="radio" name="flexRadioDefault"
+                        id="flexRadioDefault2" >
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        Female
+                    </label>
+                </div>
+                <div class="form-check ">
+                    <input #inputGender (click)="All('All',$event)" class="form-check-input" type="radio" name="flexRadioDefault"
+                        id="flexRadioDefault1">
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        All
+                    </label>
+                </div>
+
+            </div>
+
+            <!-- Icon -->
+
+            <div class="icon p-3 d-flex gap-2 align-items-center ">
+                <p class="p-0 m-0 ">Filter</p>
+                <i class="fa-solid fa-arrow-up-wide-short"></i>
+            </div>
+        </div>
+
+
+        <!-- All Patients Body --> 
+        <div class="row mb-5 shadow rounded-4 bg-light  mx-auto g-3 p-0 align-items-center position-relative" *ngFor="let patient of allPatient!|gender:gender">
+            <!-- image -->
+            <div class="col-md-3">
+                <div class="imagePatient bg-danger d-flex justify-content-center align-items-center overflow-hidden ">
+                    <img [src]="'https://localhost:7198/images/'+patient.photoPath" class="  w-100"   [alt]="patient.patientName">
+                </div>
+
+            </div>
+              <!-- Name -->
+            <div class="col-md-3">
+                <div class="nameEmail">
+                    <h1>{{patient.patientName}}</h1>
+                    <p ><i class="fa-regular fa-envelope"></i><strong>{{patient.email}}</strong></p>
+                    <p><i class="fa-solid fa-person-half-dress"></i><strong>{{patient.gender}}</strong></p>
+    
+                    
+    
+                </div>
+
+            </div>
+            <!-- appointment -->
+            <div class="col-md-3">
+                <div class="appointment">
+               
+                    <span class="shadow">{{patient.appointment|dayCustom}}</span>
+                </div>
+
+            </div>
+
+           <!-- Status -->
+          <div class="col-md-3">
+            <div class="bookingStatus">
+                <span [class]="patient.bookingStatus.toString()=='Completed'?'green':'bg-danger'" class="shadow">{{patient.bookingStatus}}</span>
+            </div>
+
+          </div>
+     
+            
+                   
+<!-- icon correct -->
+        <div *ngIf="patient.bookingStatus.toString()=='Completed'" class="correct d-flex justify-content-center align-items-center p-3 rounded-3 shadow position-absolute  ">
+            <i class="fa-solid fa-check"></i>
+
+          </div>
+    
+
+        </div>
+
+
+
+
+
+
+    </div>
+
+
+
+</section>
+
+<!-- When empty data -->
+
+<!-- *ngIf="AllDoctorsList; else doctorsListEmpty" -->
+<!-- <ng-template #doctorsListEmpty>
+  <div class="notFound py-5 h-100 d-flex justify-content-center align-items-center">
+    <div class=" my-3 py-5 shadow text-center px-3  rounded-5 overflow-hidden">
+      <h1 class="text-center text-capitalize fw-bold">
+        There is no doctor with that name OR Not Doctor Add BY Admin .
+      </h1>
+    </div>
+  </div>
+</ng-template> -->

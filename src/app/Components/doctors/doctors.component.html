@@ -1,0 +1,22 @@
+<div class="doctors position-relative mb-4 d-flex justify-content-between flex-column ">
+    <span routerLink="/doctors/addDoctors" class="btnAddDoctors"><i class="fa-solid fa-plus"></i></span>
+    <!-- d-flex justify-content-between w-50 mx-auto shadow-lg rounded-4 mt-2 mb-2 p-4 mainD gap-3 -->
+    <div class="d-flex  w-50 mx-auto shadow-lg   justify-content-between  mb-2 p-2 rounded-3  mainD gap-3">
+
+        <span routerLinkActive="activeLink" routerLink="allDoctors" role="button">ALL Doctors</span>
+        <span routerLinkActive="activeLink" routerLink="addDoctors" role="button">add Doctors</span>
+        <span routerLinkActive="activeLink" routerLink="editDoctors" role="button">edit Doctors</span>
+        <span routerLinkActive="activeLink" routerLink="aboutDoctors" role="button">about Doctors</span>
+    </div>
+    
+    <div class="main-section-doctors container-fluid" >
+        <router-outlet></router-outlet>
+    
+    
+    
+    </div>
+
+</div>
+
+
+

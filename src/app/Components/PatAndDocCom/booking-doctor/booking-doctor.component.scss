@@ -1,0 +1,146 @@
+.DoctorBooking{
+    // Header
+    .header{
+        i{
+            font-size: 60px;
+            color: crimson;
+        }
+    }
+// Filter
+    .filter{
+        // icon
+        .icon{
+            background-color: gray;
+            i,p{
+                font-size: 20px;
+                font-weight: bold;
+                
+            }
+            
+        }
+        // Gender
+        .gender{
+            
+            .form-check{
+                .form-check-input:checked {
+                    background-color: red;
+                    border-color: red;
+                    &:focus {
+                        border-color:unset !important;
+                        outline: none !important;
+                        border: none;
+                        box-shadow:unset !important
+                    }
+                }
+                
+                .form-check-input:active {
+                    filter: brightness(90%);
+                }
+                .form-check-input[type="radio"] {
+                    border-radius: 50%;
+                }
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                label{
+                    font-size: 17px;
+                    font-weight: bold;
+                    
+    
+                }
+
+            }
+        }
+        // Name
+        .inputName{
+            input{
+                padding: 10px;
+                border-radius: 10px;
+                outline: 0;
+                color: white;
+                border: 0px;
+                background-color: #000;
+                caret-color: white;
+                &::placeholder{
+                    color: white;
+
+                }
+            }
+        }
+        // Days
+        .Days{
+            input{
+                padding: 10px;
+                border-radius: 10px;
+                outline: 0;
+                color: white;
+                border: 0px;
+                background-color: #000;
+                caret-color: white;
+                &::placeholder{
+                    color: white;
+
+                }
+            }
+        }
+
+
+        }
+
+
+        // All patients
+        .row{
+            width: 75%;
+            transition: all 0.5s;
+            &:hover{
+                width: 80%;
+            }
+            .nameEmail{
+                p{
+                    padding: 0;
+                    margin-bottom: 10px;
+                    font-size: 15px;
+                    font-style: italic;
+                    display: flex;
+                    gap: 18px;
+                    align-items: center;
+                    cursor: pointer;
+                    i{
+                        font-size: 25px;
+                        color:#0070cd;
+                        // margin-right: 15px;
+                        
+                    }
+
+                }
+            }
+            span{
+               background-color: #ef0f0f;
+               color: white;
+               padding: 10px ;
+               border-radius: 10px;
+
+
+            }
+
+            .green{
+                background-color: green;
+            }
+
+        }
+        .correct{
+            top:0px;
+            right: 10px;
+            background-color: rgba(0,0,0,0.4);
+            width: 50px;
+            height: 50px;
+            i{
+                font-size: 30px;
+                color: green;
+                font-weight: bold;
+            }
+        }
+
+        
+
+}

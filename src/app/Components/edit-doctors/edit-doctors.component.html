@@ -1,0 +1,62 @@
+<section class="add-doctors shadow w-75 mx-auto rounded-3 my-5 p-3">
+    <div class="h  ">
+        <div class="main-title my-4 mx-auto  ">
+            <h1>Edit Doctors</h1>
+        </div>
+    </div>
+    <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
+        <!-- image -->
+        <div class="image">
+            <input (change)="onFileSelect($event)" type="file" id="image" placeholder="Image.." />
+        </div>
+        <!-- First name -->
+        <div class="Name d-flex gap-2">
+            <input #inputItem formControlName="firstName" [value]="firstName" type="text" id="fName"
+                placeholder="FirstName.." />
+            <input #inputItem formControlName="lastName" type="text" [value]="lastName" id="LName"
+                placeholder="LastName.." />
+        </div>
+        <!-- Email -->
+        <div class="email">
+            <input #inputItem formControlName="email" [value]="email" type="email" id="email" placeholder="Email.." />
+        </div>
+        <!-- SpecializationId -->
+        <!-- [value]="objectSpecialize[0].id" -->
+        <div class="SpecializationId">
+            <input #inputItem  formControlName="specializationId" type="number"
+                list="idSpecialize" id="SpecializationId" placeholder="SpecializationId.." />
+            <datalist id="idSpecialize">
+                <option *ngFor="let item of listSpecialize" [value]="item.id">{{item.name}}</option>
+
+            </datalist>
+        </div>
+        <!-- Phone -->
+        <div class="phone">
+            <input #inputItem [value]="phone" formControlName="phone" type="text" placeholder="Phone" />
+        </div>
+        <!-- Gender -->
+        <div class="genderInput">
+            <input #inputItem formControlName="gender" [value]="doctorData?.gender" type="text" list="gender-list" placeholder="Gender"
+                class="my-2 mx-auto" />
+
+            <!-- <datalist id="gender-list">
+                <option value="male"></option>
+                <option value="female"></option>
+            </datalist> -->
+        </div>
+        <!-- Date -->
+        <div class="Date">
+            <input #inputItem formControlName="dateOfBirth" [value]="doctorData?.dateOfBirth" type="text" placeholder="Date Of Birth" />
+        </div>
+
+
+
+
+    </form>
+    <div class="buttons d-flex justify-content-center gap-3 ">
+        <!-- Buttons -->
+        <button (click)="onSubmit()" class="btnAddForm text-uppercase   rounded-4 mt-3">EDIT Doctor</button>
+        <button (click)="clearInput()" class="btnAddForm text-uppercase   rounded-4 mt-3">Clear</button>
+
+    </div>
+</section>

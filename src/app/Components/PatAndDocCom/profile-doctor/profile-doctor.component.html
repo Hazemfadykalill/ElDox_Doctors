@@ -1,0 +1,41 @@
+<section class="profilePatients">
+    <div class="h  ">
+        <div class="main-title my-4 mx-auto  ">
+            <h1>Welcome Doctor</h1>
+        </div>
+    </div>
+    <div class="content mt-5">
+        <div class="img text-center">
+            <img *ngIf="DoctorDetails?.photoPath;else emptyImage " class=" rounded-circle" height="200" width="200" [src]="'https://localhost:7198/images/'+DoctorDetails?.photoPath"
+                [alt]="DoctorDetails?.firstName">
+        
+                
+               
+            <h1 class="text-capitalize">{{DoctorDetails?.firstName}} {{DoctorDetails?.lastName}}</h1>
+
+        </div>
+        <div class="footer">
+            <ul>
+                <li><i class="fa-solid fa-envelope"></i> {{DoctorDetails?.email}}</li>
+                <li><i class="fa-solid fa-phone"></i> {{DoctorDetails?.phone}}</li>
+                <li><i class="fa-solid fa-person-half-dress"></i> {{DoctorDetails?.gender}}</li>
+                <li><i class="fa-solid fa-calendar-days"></i> {{DoctorDetails?.dateOfBirth|date}}</li>
+
+            </ul>
+        </div>
+        <div class="b text-center  d-flex justify-content-center">
+            <button routerLink="/Booking" (click)="bookPatient()"
+                class="book d-block ">Books</button>
+
+        </div>
+
+
+
+    </div>
+ 
+
+</section>
+<ng-template #emptyImage >
+    <img class=" rounded-circle" height="200" width="200" src="./assets/images/lostPatients.png"
+    [alt]="DoctorDetails?.firstName">
+</ng-template>

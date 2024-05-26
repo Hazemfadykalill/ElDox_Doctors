@@ -1,0 +1,196 @@
+<section class="Number container-fluid  mx-auto  ">
+    <!-- Header Years Days Month -->
+
+    <div class="first     ">
+        <div class="row ">
+            <div class="col-md-4">
+
+                <div class="div rounded-4">
+                    <div class="one selectItem shadow ">
+                        <div class="header my-3 gap-3 d-flex align-items-center">
+                            <div class="icon d-flex justify-content-center align-items-center">
+                                <i class="fa-solid fa-user-doctor"></i>
+
+                            </div>
+                            <h1> New Doctors</h1>
+
+
+                        </div>
+
+                        <select #newDoctor class="form-select " aria-label="Default select example"
+                            (change)="change($event)">
+                            <option value="Last24Hours">Last24Hours</option>
+                            <option value="LastWeek">LastWeek</option>
+                            <option value="LastMonth">LastMonth</option>
+                            <option value="LastYear">LastYear</option>
+                        </select>
+                        <div class="footer mt-3 mb-2 d-flex align-items-center justify-content-between">
+                            <p class="m-0 p-0 fs-6 fw-bold">{{lastDoctor}}</p>
+                            <span><strong>No:{{numDoctors}}</strong></span>
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </div>
+            <div class="col-md-4">
+                <div class="div rounded-4">
+                    <div class="two selectItem shadow">
+                        <div class="header my-3 gap-3 d-flex align-items-center">
+                            <div class="icon d-flex justify-content-center align-items-center">
+                                <i class="fa-solid fa-bed-pulse"></i>
+
+                            </div>
+                            <h1> New Patients</h1>
+
+
+                        </div>
+                        <select #newPatient class="form-select " aria-label="Default select example"
+                            (change)="change1($event)">
+                            <option value="Last24Hours">Last24Hours</option>
+                            <option value="LastWeek">LastWeek</option>
+                            <option value="LastMonth">LastMonth</option>
+                            <option value="LastYear">LastYear</option>
+                        </select>
+                        <div class="footer mt-3 mb-2 d-flex align-items-center justify-content-between">
+                            <p class="m-0 p-0 fs-6 fw-bold">{{lastPatient}}</p>
+                            <span><strong>No:{{numPatients}}</strong></span>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="col-md-4">
+
+                <div class="div rounded-4">
+                    <div class="three shadow selectItem">
+                        <div class="header my-3 gap-3 d-flex align-items-center">
+                            <div class="icon d-flex justify-content-center align-items-center">
+                                <i class="fa-solid fa-book-journal-whills"></i>
+
+                            </div>
+                            <h1> Appointments</h1>
+
+
+                        </div>
+                        <select #newAppointment class="form-select " aria-label="Default select example"
+                            (change)="change2($event)">
+                            <option value="1">Last24Hours</option>
+                            <option value="2">LastWeek</option>
+                            <option value="3">LastMonth</option>
+                            <option value="3">LastYear</option>
+                        </select>
+
+                        <div class="footer my-3  ">
+                            <div class="spans small ">
+                                <span>N.Request:{{numOfReq.numOfRequests}}</span>
+                                <span>N.Pending :{{numOfReq.numOfPendingRequests}}</span>
+                                <span>N.cancel:{{numOfReq.numOfCompletedRequests}}</span>
+                                <span>N.Complete:{{numOfReq.numOfCancelledRequests}}</span>
+                            </div>
+
+
+                        </div>
+
+
+
+
+                    </div>
+
+
+                </div>
+
+            </div>
+            
+        </div>
+
+
+
+
+
+
+
+
+
+    </div>
+    <div class="w-75 mx-auto   my-5">
+        <div class="main-title my-5 ">
+            <h1>Top Doctors Analysis </h1>
+        </div>
+        <div class="canvaDetails d-flex justify-content-between align-items-center">
+            <div class="canva">
+                <canvas height="400" width="700" class="w-100 " baseChart [data]="barChartData" [options]="barChartOptions"
+                [plugins]="barChartPlugins" [legend]="barChartLegend" [type]="'bar'">
+            </canvas>
+    
+
+            </div>
+            <div class="Bar ">
+                <!-- <h1 class="text-center my-2">Top Specialization</h1> -->
+                <canvas  baseChart [type]="'pie'" [datasets]="pieChartDatasets" [labels]="pieChartLabels"
+                [options]="pieChartOptions" [plugins]="pieChartPlugins" [legend]="pieChartLegend">
+             </canvas>
+
+            </div>
+
+       
+        </div>
+     
+    </div>
+    <!-- Slider -->
+    <div class="second  my-5   ">
+   
+        <div class="my-3 ">
+
+
+            <owl-carousel-o [options]="customOptions">
+
+                <ng-container *ngFor="let doctor of topDoctors">
+                    <ng-template carouselSlide>
+
+                        <div class="customDiv    overflow-hidden mx-3 rounded-3 shadow ">
+                            <div class="img overflow-hidden ">
+                                <img [src]="'https://localhost:7198/images/'+doctor.photoPath"
+                                    height="270" [alt]="doctor.fullName">
+                            </div>
+                            <div class="custom-content px-2 my-3 ">
+                                <h1> {{doctor.fullName}}</h1>
+                                <div class="footer mx-2 d-flex align-items-center justify-content-between">
+                                    <h4 class="m-0 p-0 fs-6 fw-bold text-capitalize">{{doctor.specialize}}</h4>
+                                    <span><strong>SID:{{doctor.num}}</strong></span>
+
+                                </div>
+                                <div class="footerAllDoctorP">
+                                    <button [routerLink]="['/doctors/aboutDoctors',doctor.num]"
+                                    routerLinkActive="router-link-active" class="see-more mx-auto mt-4 rounded-3 ">See
+                                    More</button>
+
+                                </div>
+                              
+
+                            </div>
+
+                        </div>
+
+
+
+                    </ng-template>
+                </ng-container>
+
+            </owl-carousel-o>
+           
+
+
+        </div>
+
+
+
+
+
+
+    </div>
+
+
+</section>

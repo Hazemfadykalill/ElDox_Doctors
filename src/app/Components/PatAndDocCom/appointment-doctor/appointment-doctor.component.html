@@ -1,0 +1,107 @@
+<section class="main-section my-5">
+    <!-- Header -->
+    <div class="k my-5  d-flex justify-content-center">
+        <div class="main-title  ">
+            <h1>Appointments Doctors</h1>
+        </div>
+
+    </div>
+    <!-- Body -->
+    <!-- Add -->
+    <div class="addAppointments d-flex justify-content-between align-items-center my-5 mx-5">
+        <div class="inputsAppointments  shadow rounded-4 px-4 py-3">
+            <div class="d-flex gap-4 my-4">
+                <input #price (change)="priceBook($event)" type="number" placeholder="Enter Price" class="form-control">
+                <select #day (change)="changeDay($event)" #time class="form-select" aria-label="Default select example">
+                    <option disabled> select Time</option>
+
+                    <option #opt *ngFor="let item of days " [value]="item" >{{item}}</option>
+
+                </select>
+
+            </div>
+            <div class=" d-flex align-items-center gap-2">
+                <input #timeInput [(ngModel)]="times" type="time" multiple placeholder="Enter Time"
+                    class="form-control">
+                <button (click)="addTimeToList()" class=" bg-white text-black">Add </button>
+
+
+
+            </div>
+
+
+
+        </div>
+        <div class="add d-flex justify-content-end  mx-3 my-3">
+            <button (click)="add()" class="px-4 py-3 rounded-3">Add Appointments</button>
+
+        </div>
+
+    </div>
+
+
+    <!-- body After Add Appointments -->
+    <div class="all d-flex   align-items-start justify-content-center my-5">
+        <div class="  shadow rounded-4 overflow-hidden my-4  me-5  ">
+            <div class="row g-0 justify-content-center ">
+                <div class="col-md-3 mb-3" *ngFor="let day of appointmentList!|customTime">
+                    <div class="days">
+                        <div class="day p-3">
+                            <h6 class="">{{day.day}}</h6>
+
+                        </div>
+
+                        <div  class="times d-flex flex-column overflow-y-auto  ">
+                            <div class="span   my-2 d-flex align-items-center gap-5 " *ngFor="let time of day.times">
+                                <p class="m-0 p-0 ">{{time.time}} PM</p>
+                                <div class="icons d-flex align-items-center gap-4  ">
+                                    <div class="icon edit d-flex justify-content-center align-items-center">
+                                        <i (click)="Update(time.id,time.time)"
+                                            class="  fa-regular fa-pen-to-square"></i>
+
+
+                                    </div>
+                                    <div class="icon delete d-flex justify-content-center align-items-center">
+                                        <i (click)="delete(time.id)" class="fa-solid fa-delete-left"></i>
+
+
+                                    </div>
+                                </div>
+
+
+
+
+                            </div>
+
+
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+        </div>
+        <div *ngIf="flag" class="input shadow py-4  rounded-4 w-25 my-4 ">
+            <input [(ngModel)]="timeDay" [value]="timeValue" type="time" class=" w-75 mx-auto form-control p-3">
+
+            <div class="add d-flex justify-content-center  mx-3 my-3">
+                <button (click)="updateTwo()" class="px-4 py-3 rounded-3">Update</button>
+
+            </div>
+        </div>
+
+
+
+    </div>
+
+
+
+
+
+</section>

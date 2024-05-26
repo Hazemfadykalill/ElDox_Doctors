@@ -1,0 +1,140 @@
+<div class="allDoctors my-4 ">
+  <div class="header d-flex mt-4 align-items-center  justify-content-between">
+    <div class="b">
+
+
+      <button routerLink="/doctors/addDoctors" class="add text-capitalize">
+        <i class="fa-solid fa-plus me-2"></i>add
+      </button>
+    </div>
+
+    <!-- search by spl -->
+    <div>
+      <div class="s">
+        <div class="container">
+          <input checked="" class="checkbox" type="checkbox" />
+          <div class="mainbox">
+            <div class="iconContainer">
+              <svg viewBox="0 0 512 512" height="1em" xmlns="http://www.w3.org/2000/svg" class="search_icon">
+                <path
+                  d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z">
+                </path>
+              </svg>
+            </div>
+            <input list="idSpecialize" (keyup)="changeAllDoctorsBySpl($event)" class="search_input"
+              placeholder="Search By Specialize" type="text" />
+            <datalist id="idSpecialize">
+              <option *ngFor="let item of listSpecialize" [value]="item.id">{{item.name}}</option>
+
+            </datalist>
+          </div>
+        </div>
+
+
+      </div>
+
+
+
+    </div>
+    <!-- search by name -->
+    <div>
+      <div class="s">
+        <div class="container">
+          <input checked="" class="checkbox" type="checkbox" />
+          <div class="mainbox">
+            <div class="iconContainer">
+              <svg viewBox="0 0 512 512" height="1em" xmlns="http://www.w3.org/2000/svg" class="search_icon">
+                <path
+                  d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z">
+                </path>
+              </svg>
+            </div>
+            <input (keyup)="changeAllDoctorsByNameDoctor($event)" class="search_input" placeholder="search Name Doctor"
+              type="text" />
+
+          </div>
+        </div>
+
+
+      </div>
+
+
+
+    </div>
+  </div>
+  <div class="m ">
+    <div class="k my-4 d-flex justify-content-center">
+      <div class="main-title my-4  ">
+        <h1>All Doctors</h1>
+      </div>
+
+    </div>
+
+
+    <div class="doctorsData my-3" *ngIf="AllDoctorsList; else doctorsListEmpty">
+      <div class="row g-4 justify-content-center ">
+        <div class="col-md-3" *ngFor="let doctor of AllDoctorsList | paginate: { id: 'paginationAllDoctors',
+        itemsPerPage: allDoctors!.pageSize,
+        currentPage:allDoctors!.currentPage,
+        totalItems: allDoctors!.totalCount,
+        
+         } ">
+          <div class="customDiv shadow rounded-4 overflow-hidden">
+            <div class="img overflow-hidden">
+              <img [src]="'https://localhost:7198/images/'+doctor.photoPath" height="270" class="w-100"
+                [alt]="doctor.fullName" />
+              <div class="overlay">
+                <span (click)="edit(doctor.id)"><i class="fa-solid fa-pen-to-square"></i>
+                </span>
+                <span (click)="confirmDa(doctor.id)"><i class="fa-solid fa-trash-can-arrow-up"></i></span>
+              </div>
+            </div>
+            <div class="custom-content px-2 my-3">
+              <h1>{{ doctor.fullName }}</h1>
+              <div class="footer mx-2 d-flex align-items-center justify-content-between">
+                <h4 class="m-0 p-0 fs-6 fw-bold text-capitalize">
+                  {{ doctor.specialize }}
+                </h4>
+                <!-- <span><strong>SID:{{doctor.}}</strong></span> -->
+              </div>
+              <div [class]="doctor.appointments!=null?'justify-content-between':'justify-content-center'" class="footerAllDoctorP mt-5 my-3 d-flex justify-content-between align-items-center ">
+                <button [routerLink]="['/doctors/aboutDoctors', doctor.id]" class="see-more  rounded-3">
+                  See More
+                </button>
+                <i *ngIf="doctor.appointments" class="fa-solid fa-bookmark fa-fade"></i>
+
+              </div>
+
+             
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<div class="pagination my-5 d-flex justify-content-center">
+  <pagination-controls id="paginationAllDoctors" (pageChange)="pageChanged($event)"
+    (pageBoundsCorrection)="pageChanged($event)" [maxSize]="9" [directionLinks]="true" [autoHide]="true"
+    [responsive]="true" previousLabel="Previous" nextLabel="Next" screenReaderPaginationLabel="Pagination"
+    screenReaderPageLabel="page" screenReaderCurrentLabel="You're on page">
+  </pagination-controls>
+</div>
+
+<ng-template #doctorsListEmpty>
+  <div class="notFound py-5 h-100 d-flex justify-content-center align-items-center">
+    <div class=" my-3 py-5 shadow text-center px-3  rounded-5 overflow-hidden">
+      <h1 class="text-center text-capitalize fw-bold">
+        There is no doctor with that name OR Not Doctor Add BY Admin .
+      </h1>
+    </div>
+  </div>
+</ng-template>
+
+<!-- | paginate: { id: 'paginationAllDoctors',
+        itemsPerPage: allDoctors!.pageSize,
+        currentPage:allDoctors!.currentPage,
+        totalItems: allDoctors!.totalCount } -->

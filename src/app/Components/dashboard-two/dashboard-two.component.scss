@@ -1,0 +1,122 @@
+.form-select {
+    // --bs-form-select-bg-img: url(data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e);
+    display: block;
+    width: 75%;
+    padding: .375rem 2.25rem .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color:  white !important;
+    appearance: none;
+    background-color: #000;
+    // background-image: var(--bs-form-select-bg-img), var(--bs-form-select-bg-icon, none);
+    background-repeat: no-repeat;
+    background-position: right .75rem center;
+    background-size: 16px 12px;
+    border: none !important;
+    border-radius: 10PX;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+.form-select:focus {
+    border-color: #86b7fe;
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem #2d3250;
+}
+
+
+
+
+
+.Number{
+    margin-top:50px;
+    width: 90%;
+    
+.main-title{
+    margin: 10px auto 30px ;
+    width: fit-content;
+    h1{
+        font-size: 60px;
+        
+        font-weight:bolder;
+    }
+}
+.one{
+    // background-color: #007bff;
+    span{
+        background-color: #198754;
+    }
+}
+.two{
+    // background-color: #fd7e14;
+    span{
+        background-color: #198754;
+    }
+}
+.three{
+    // background-color: #198754;
+    span{
+        // background-color: #007bff;
+    
+    }
+}
+
+.selectItem{
+    padding: 15px;
+    border-radius: 10px;
+    
+    // transition: all 0.5s;
+    // &:hover{
+    //     transform: translateY(10px)
+    
+
+    // }
+    i{
+        color: white;
+    }
+}
+
+.icon{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color:#86b7fe;
+    i{
+        font-size: 20px;
+        color: white;
+
+
+    }
+}
+
+.footer
+ span{
+    padding: 10px;
+    border-radius: 10px;
+   
+}
+.spans{ 
+    display: flex ;  
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+   
+    span{
+        padding: 10px;
+        border-radius: 10px;
+        font-weight: bold;
+        background-color: #198754;
+        
+    }
+}
+
+
+.trendingS{
+    // background-color: #007bff;
+    border-radius: 10px;
+    padding: 10px;
+ 
+
+}
+
+
+}

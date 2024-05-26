@@ -1,0 +1,74 @@
+<div class="dasMain">
+    <!-- Nav Bar  -->
+<app-navbar></app-navbar>
+
+<!-- main section tow parts -->
+<!-- d-flex px-3  align-items-center -->
+<div class="mainSectionDashboard  position-relative ">
+<!-- left -->
+    <!-- <div  class="  shadow mt-4 menuSection bg-main-color py-5 px-3   rounded-3  position-relative  ">
+        <div class=" shadow rounded-circle  image position-absolute  mb-3 py-3 ">
+            <img src="../../../assets/images/loggg.jpg"  class=" w-100" alt="">
+
+        </div>
+        <div class="menu-header text-center text-white mb-3  ">
+            
+            <h2 class="mt-2">Kiarn</h2>
+            <p>Administrator</p>
+        </div>
+        <ul >
+            <li>
+                <a routerLink="/dashboard" >
+                    <i class="fa-solid fa-chart-line"></i>
+                    <span>Dashboard</span>
+                </a>
+            </li>
+            <li>
+                <a routerLink="/doctors/allDoctors" >
+                    <i class="fa-solid fa-user-doctor"></i>
+                    <span>Doctors</span>
+                </a>
+            </li>
+            <li>
+                <a routerLink="/patients/allPatients" >
+                    <i class="fa-solid fa-bed"></i>
+                    <span>Patient</span>
+                </a>
+            </li>
+            <li>
+                <a routerLink="/appointments/bookAppointments" >
+                    <i class="fa-regular fa-calendar-check"></i>
+                    <span>Appointments</span>
+                </a>
+            </li><li>
+                <a  >
+                    <i  class="fa-solid fa-arrow-right-from-bracket"></i>
+                    <span (click)="logOut()">Log Out</span>
+                </a>
+            </li>
+
+
+        </ul>
+            
+       
+       
+    
+    
+    </div> -->
+<!-- right -->
+    <div class=" outerLet  mx-2   ">
+      
+        <router-outlet></router-outlet>
+   
+    </div>
+ 
+   
+
+</div>
+</div>
+
+
+<!-- in right part is router outlet -->
+
+<app-footer></app-footer>
+

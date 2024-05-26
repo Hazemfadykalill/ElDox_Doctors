@@ -1,0 +1,22 @@
+
+<div class="updataCoupons">
+    <div class="h  ">
+        <div class="main-title my-4 mx-auto  ">
+          <h1>Edit Coupons</h1>
+        </div>
+      </div>
+
+    <form [formGroup]="editForm" class="my-4" >
+        <input formControlName="discountCode" [value]="code"   type="text" class=" w-100" placeholder="Enter DiscountCode.. " >
+        <input formControlName="numOfRequests"  [value]="num"  type="number" class=" w-100" placeholder="Enter NumOfRequest.. " >
+        <!-- <input formControlName="discountType" value="Percentage"  type="text" class=" w-75 mx-auto" placeholder="Enter discountType.. " > -->
+        <input  formControlName="value"  [value]="value" min="0" max="99"  type="number" class=" w-100" placeholder="Enter Value.. " >
+    
+    
+    
+    
+    
+    
+    </form>
+
+</div>

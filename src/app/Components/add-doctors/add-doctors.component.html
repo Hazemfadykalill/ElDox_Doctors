@@ -1,0 +1,75 @@
+<section class="add-doctors shadow w-75 mx-auto rounded-3 my-5 p-3   ">
+  <div class="h  ">
+    <div class="main-title my-4 mx-auto  ">
+      <h1>Add Doctors</h1>
+    </div>
+  </div>
+ 
+  <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
+    <!-- <label for="fruit-input"> Favorite Fruit? </label> -->
+    <!-- image -->
+    <div class="image">
+      <input (change)="onFileSelect($event)"
+        type="file"
+        id="image"
+        placeholder="Image.."
+      
+      />
+    </div>
+    <!-- First name -->
+    <div class="Name d-flex gap-2">
+      <input #inputItem formControlName="FirstName"  type="text" id="fName" placeholder="FirstName.." />
+      <input  #inputItem formControlName="LastName" type="text" id="LName" placeholder="LastName.." />
+    </div>
+    <!-- Email -->
+    <div class="email">
+      <input  #inputItem formControlName="Email" type="email" id="email" placeholder="Email.." />
+    </div>
+    <!-- SpecializationId -->
+    <div class="SpecializationId">
+      <input  #inputItem formControlName="SpecializationId"
+        type="number"
+        list="idSpecialize"
+        id="SpecializationId"
+        placeholder="SpecializationId.."
+      />
+      <datalist id="idSpecialize">
+        <option *ngFor="let item of listSpecialize"  [value]="item.id">{{item.name}}</option>
+     
+      </datalist>
+    </div>
+    <!-- Phone -->
+    <div class="phone">
+      <input  #inputItem formControlName="Phone" type="tel" id="tel" placeholder="Phone.." />
+    </div>
+    <!-- Gender -->
+    <div class="genderInput">
+      <input  #inputItem formControlName="Gender"
+        type="text"
+        id="gender"
+        list="gender-list"
+        placeholder="Gender.."
+        class="my-2 mx-auto"
+      />
+
+      <datalist id="gender-list">
+        <option value="male"></option>
+        <option value="female"></option>
+      </datalist>
+    </div>
+    <!-- Date -->
+    <div class="Date">
+      <input  #inputItem formControlName="DateOfBirth" type="date" id="tel" placeholder="Date.." />
+    </div>
+    
+   
+ 
+   
+  </form>
+  <div class="buttons d-flex justify-content-center gap-3 ">
+     <!-- Buttons -->
+    <button (click)="onSubmit()" class="btnAddForm text-uppercase   rounded-4 mt-3">ADD Doctor</button>
+    <button (click)="clearInput()" class="btnAddForm text-uppercase   rounded-4 mt-3">Clear</button>
+
+  </div>
+</section>
